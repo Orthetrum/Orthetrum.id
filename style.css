@@ -1,0 +1,315 @@
+/* ==========================================================================
+   CORE & GLOBAL STYLES
+   Pengaturan dasar tubuh halaman, font, dan transisi tema.
+   ========================================================================== */
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+/* Custom Scrollbar (Browser Wide) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background-color: #f1f5f9; }
+.dark ::-webkit-scrollbar-track { background-color: #0f172a; }
+::-webkit-scrollbar-thumb { 
+    background-color: rgba(14, 165, 233, 0.5); 
+    border-radius: 9999px; 
+}
+::-webkit-scrollbar-thumb:hover { background-color: #0ea5e9; }
+
+
+/* ==========================================================================
+   NAVIGATION BAR STYLES
+   Gaya untuk menu navigasi, link, dan efek hover garis bawah.
+   ========================================================================== */
+.nav-link { 
+    position: relative;
+    color: #64748b; /* text-slate-500 */
+    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-link:hover {
+    color: #0ea5e9; /* primary */
+}
+
+.nav-link::after { 
+    content: ''; 
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: #0ea5e9;
+    transition: all 0.3s;
+}
+
+.nav-link:hover::after { 
+    width: 100%; 
+}
+
+/* Mobile Menu State (Slide-in Animation) */
+#mobile-menu { 
+    transform: translateX(100%); 
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+#mobile-menu.open { 
+    transform: translateX(0); 
+}
+
+
+/* ==========================================================================
+   ANIMATION & INTERACTION SYSTEM
+   Sistem Reveal (muncul saat scroll) dan efek dekoratif.
+   ========================================================================== */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(50px) scale(0.95); 
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+}
+
+.dragonfly-svg { 
+    filter: drop-shadow(0 10px 15px rgba(14, 165, 233, 0.3)); 
+}
+
+
+/* ==========================================================================
+   COMPONENT: PREMIUM CARDS (Services & Advantages)
+   Gaya kartu pada section Layanan dan Keunggulan.
+   ========================================================================== */
+.card-premium { 
+    position: relative;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.dark .card-premium {
+    background-color: rgba(15, 23, 42, 0.5);
+    border-color: #1e293b;
+}
+
+.card-premium:hover { 
+    transform: translateY(-1rem);
+    border-color: rgba(14, 165, 233, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.2);
+}
+
+.card-icon { 
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.7s;
+}
+
+.card-premium:hover .card-icon {
+    transform: rotate(360deg);
+}
+
+
+/* ==========================================================================
+   DRAGONFLY SWARM SYSTEM (Background Animation)
+   Konstruksi tubuh, sayap, dan animasi kepakan capung.
+   ========================================================================== */
+#dragonfly-garden {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+    backface-visibility: hidden;
+    pointer-events: none; 
+    z-index: 50; 
+}
+
+.dragonfly-body {
+    position: absolute;
+    width: 2px;
+    height: 35px;
+    background: #0ea5e9;
+    border-radius: 999px;
+    filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.8));
+    transition: transform 0.1s linear;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0.8; 
+}
+
+.dragonfly-wing-left, .dragonfly-wing-right {
+    position: absolute;
+    top: 5px;
+    width: 28px;
+    height: 10px;
+    background: rgba(14, 165, 233, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    backdrop-filter: blur(1px);
+}
+
+.dragonfly-wing-left {
+    right: 2px;
+    transform-origin: right center;
+    animation: flap-left 0.1s infinite;
+}
+
+.dragonfly-wing-right {
+    left: 2px;
+    transform-origin: left center;
+    animation: flap-right 0.1s infinite;
+}
+
+@keyframes flap-left {
+    0%, 100% { transform: rotateY(0deg) skewY(10deg); }
+    50% { transform: rotateY(75deg) skewY(-10deg); }
+}
+
+@keyframes flap-right {
+    0%, 100% { transform: rotateY(0deg) skewY(-10deg); }
+    50% { transform: rotateY(-75deg) skewY(10deg); }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Mobile Optimization)
+   Penyesuaian gambar dan tata letak untuk HP agar teks tidak terpotong.
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Mencegah teks judul terpotong di HP */
+    h1 {
+        font-size: 3.2rem !important; /* Ukuran fleksibel untuk mobile */
+        line-height: 1.1 !important;
+        word-break: break-word; /* Memutus kata jika terlalu panjang */
+    }
+
+    h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        word-break: break-word;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+
+    .animate__animated img {
+        width: 100% !important; 
+        max-width: none !important; 
+        margin: 0 auto;
+        display: block;
+        border-radius: 2rem;
+    }
+
+    /* Memberikan ruang aman di sisi kiri-kanan */
+    section {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .card-premium, .card-hd-premium {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ==========================================================================
+   HD ENHANCEMENT & PRECISION LAYOUT 
+   Sistem styling untuk ketajaman visual maksimal.
+   ========================================================================== */
+
+/* HD Image Rendering & Sharpness */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+}
+
+/* Precision Container HD */
+.card-hd-premium {
+    position: relative;
+    padding: 2.5rem 2rem;
+    background: white;
+    border-radius: 2.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+}
+
+.dark .card-hd-premium {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+.card-hd-premium:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(14, 165, 233, 0.4);
+    box-shadow: 0 40px 80px -20px rgba(14, 165, 233, 0.15);
+}
+
+/* Glassmorphism HD Effect */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-panel {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Typography Sharpness */
+h1, h2, h3, h4 {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.02em;
+}
+
+/* Floating Animation for HD Elements */
+@keyframes float-hd {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-15px) scale(1.02); }
+}
+
+.animate-float-hd {
+    animation: float-hd 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* New: Section Details Specific Enhancements */
+#details img {
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+}
+
+@media (min-width: 1024px) {
+    #details h2 {
+        font-size: 5.5rem;
+        letter-spacing: -0.05em;
+    }
+}
+
+.group:hover .w-16 {
+    transform: scale(1.1) rotate(8deg);
+    box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+}
