@@ -146,3 +146,35 @@ window.addEventListener('resize', () => {
         if (y > window.innerHeight) df.style.top = `${window.innerHeight - 50}px`;
     });
 });
+
+function toggleWaPopup() {
+        const popup = document.getElementById('wa-popup');
+        
+        // Cek apakah sedang tersembunyi
+        if (popup.classList.contains('opacity-0')) {
+            // Munculkan: Hapus invisible dulu, lalu beri jeda sangat singkat untuk opacity agar animasi jalan
+            popup.classList.remove('invisible');
+            setTimeout(() => {
+                popup.classList.remove('opacity-0', 'translate-y-4');
+                popup.classList.add('opacity-100', 'translate-y-0');
+            }, 10);
+        } else {
+            // Sembunyikan: Kembalikan opacity dan posisi
+            popup.classList.add('opacity-0', 'translate-y-4');
+            popup.classList.remove('opacity-100', 'translate-y-0');
+            
+            // Tunggu animasi selesai (500ms sesuai duration-500) baru tambahkan invisible
+            setTimeout(() => {
+                popup.classList.add('invisible');
+            }, 500);
+        }
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const popup = document.getElementById('wa-popup');
+            if (popup.classList.contains('opacity-0')) {
+                toggleWaPopup();
+            }
+        }, 3000);
+    });
