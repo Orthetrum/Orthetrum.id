@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan Bisnis - Orthetrum</title>
+    <title>Perpustakaan Hama - Orthetrum</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,10 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -26,52 +23,35 @@
                         primary: '#0ea5e9',
                         secondary: '#0284c7',
                         dark: '#0f172a',
-                    },
-                    /* Perbaikan: Menambahkan sedikit padding secara global pada heading 
-                       untuk mencegah font italic/tighter terpotong di pinggir */
-                    spacing: {
-                        'font-safe': '0.05em',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'wing-flap': 'flap 0.2s ease-in-out infinite',
-                        'drift': 'drift 20s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
-                        },
-                        flap: {
-                            '0%, 100%': { opacity: '0.3' },
-                            '50%': { opacity: '1' },
-                        },
-                        drift: {
-                            '0%': { transform: 'translateX(-10%) translateY(0)' },
-                            '100%': { transform: 'translateX(110%) translateY(20px)' },
-                        }
                     }
                 }
             }
         }
     </script>
+    
     <style>
-        /* Perbaikan CSS Tambahan agar font tidak terpotong */
-        h1,
-        h2,
-        h3,
-        .nav-link,
-        span {
-            /* Memberikan sedikit ruang horizontal agar huruf italic tidak terpotong */
+        h1, h2, h3, .nav-link, span {
             padding-left: 0.02em;
             padding-right: 0.02em;
-            /* Memastikan overflow terlihat jika ada dekorasi font */
             overflow: visible !important;
         }
 
-        /* Menyesuaikan line-height agar bagian atas/bawah font tidak terpotong */
         .tracking-tighter {
             line-height: 1.1 !important;
+        }
+
+        /* HD Card Hover Effect */
+        .pest-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pest-card:hover {
+            transform: translateY(-10px);
+        }
+        .pest-image-container img {
+            transition: transform 0.7s scale;
+        }
+        .pest-card:hover .pest-image-container img {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -282,219 +262,105 @@
         </div>
     </div>
 
-    <section class="pt-48 pb-20 px-6 relative">
-        <div class="max-w-7xl mx-auto text-center reveal">
-            <div
-                class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-widest mb-8">
-                B2B Pest Management
-            </div>
-            <h1 class="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 leading-[0.9]">
-                Solusi Bisnis <br><span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 italic inline-block py-2">Tanpa
-                    Gangguan</span>
-            </h1>
-            <p
-                class="text-slate-500 dark:text-slate-400 max-w-3xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
-                Kami memahami bahwa reputasi bisnis Anda dipertaruhkan. Orthetrum menyediakan sistem pengendalian hama
-                terintegrasi yang memenuhi standar audit internasional dan kepatuhan regulasi ketat.
-            </p>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white dark:bg-slate-950/30 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
-                    Industri & <span class="text-primary italic">Sektor</span>
-                </h2>
-                <div class="w-20 h-1.5 bg-primary rounded-full"></div>
-                <p class="mt-6 text-slate-500 dark:text-slate-400 max-w-2xl font-medium">
-                    Solusi pengendalian hama Orthetrum dirancang khusus untuk memenuhi standar kebersihan dan keamanan
-                    pada berbagai sektor industri kritikal.
+    <section class="pt-40 pb-20 px-6 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            
+            <div class="w-full lg:w-3/5 text-left">
+                <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] uppercase bg-primary/10 text-primary rounded-full border border-primary/20 animate__animated animate__fadeInLeft">
+                    Orthetrum Encyclopedia
+                </span>
+                <h1 class="text-6xl md:text-7xl xl:text-8xl font-black italic tracking-tighter uppercase mb-8 leading-[0.9] animate__animated animate__fadeInLeft">
+                    Pusat <br>
+                    <span class="text-primary">Edukasi</span> <br>
+                    Hama
+                </h1>
+                <p class="text-slate-500 dark:text-slate-400 max-w-xl text-lg md:text-xl font-medium leading-relaxed animate__animated animate__fadeInLeft animate__delay-1s">
+                    Temukan informasi lengkap mengenai profil, bahaya, dan cara penanganan berbagai spesies hama di sekitar Anda secara profesional dan mendalam.
                 </p>
+                
+                <div class="mt-10 flex items-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="flex -space-x-3">
+                        <div class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=100" alt="expert" >
+                        </div>
+                        <div class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden flex items-center justify-center bg-primary text-white text-xs font-bold">
+                            19+
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Spesies Teridentifikasi</span>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div
-                    class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800"
-                            alt="Industri Penerbangan"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="plane" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Transportasi</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Penerbangan</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Layanan
-                            disinfestasi armada pesawat dan perlindungan hanggar dari risiko kerusakan kabel pesawat
-                            oleh tikus.</p>
-                    </div>
+            <div class="w-full lg:w-2/5 relative animate__animated animate__fadeInRight">
+                <div class="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-700">
+                    <img src="uploads/perpustakaan-hama.png" 
+                         alt="Pest Control Research" 
+                         class="w-full h-[500px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent"></div>
                 </div>
+                
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-3xl -z-10 animate-pulse"></div>
+                <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/30 rounded-full -z-10"></div>
+            </div>
 
-                <div class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    style="transition-delay: 100ms;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="uploads/minyak&gas.jpg" alt="Kilang Minyak dan Gas"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="droplet" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Energi</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Minyak & Gas</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Proteksi
-                            intensif untuk area kilang dan rig lepas pantai dengan prosedur keamanan tinggi tanpa risiko
-                            api.</p>
-                    </div>
-                </div>
+        </div>
+    </div>
+</section>
 
-                <div class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    style="transition-delay: 200ms;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800"
-                            alt="Farmasi dan Rumah Sakit"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="hospital" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Kesehatan</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Farmasi & Medis</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Pengendalian
-                            steril untuk rumah sakit, laboratorium, dan pabrik obat guna mencegah kontaminasi kuman
-                            pembawa hama.</p>
-                    </div>
-                </div>
+    <section class="pb-40 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <script>
+                    const pests = [
+                        { name: "Burung", slug: "burung.html", cat: "Aves" },
+                        { name: "Gegat", slug: "gegat.html", cat: "Lepismatidae" },
+                        { name: "Hama Pengerat", slug: "hama-pengerat.html", cat: "Rodentia" },
+                        { name: "Hama Menyengat", slug: "hama-menyengat.html", cat: "Hymenoptera" },
+                        { name: "Kadal", slug: "kadal.html", cat: "Lacertilia" },
+                        { name: "Kaki Seribu", slug: "kaki-seribu.html", cat: "Diplopoda" },
+                        { name: "Kecoa", slug: "kecoa.html", cat: "Blattodea" },
+                        { name: "Kelabang", slug: "kelabang.html", cat: "Chilopoda" },
+                        { name: "Kepik Berbau", slug: "kepik-berbau.html", cat: "Pentatomidae" },
+                        { name: "Kucing", slug: "kucing.html", cat: "Felidae" },
+                        { name: "Kumbang", slug: "kumbang.html", cat: "Coleoptera" },
+                        { name: "Kutu Busuk", slug: "kutu-busuk.html", cat: "Cimicidae" },
+                        { name: "Laba-laba", slug: "laba-laba.html", cat: "Araneae" },
+                        { name: "Lalat", slug: "lalat.html", cat: "Diptera" },
+                        { name: "Nyamuk", slug: "nyamuk.html", cat: "Culicidae" },
+                        { name: "Semut", slug: "semut.html", cat: "Formicidae" },
+                        { name: "Rayap", slug: "rayap.html", cat: "Isoptera" },
+                        { name: "Tungau", slug: "tungau.html", cat: "Acarina" },
+                        { name: "Ular", slug: "ular.html", cat: "Serpentes" }
+                    ];
 
-                <div
-                    class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800"
-                            alt="Gudang Logistik"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="package" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Penyimpanan</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Gudang & Logistik</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Monitoring
-                            ketat terhadap hama gudang dan pengerat untuk menjaga kualitas stok barang agar tetap aman
-                            dikirim.</p>
-                    </div>
-                </div>
-
-                <div class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    style="transition-delay: 100ms;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800"
-                            alt="Gedung Perkantoran"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="building" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Bisnis</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Perkantoran</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Menciptakan
-                            lingkungan kerja yang sehat dan bebas dari gangguan hama perkotaan demi kenyamanan karyawan.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    style="transition-delay: 200ms;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800"
-                            alt="Lini Produksi Pabrik"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="factory" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Produksi</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Manufaktur</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Perlindungan
-                            jalur produksi dan instalasi listrik pabrik dari kerusakan akibat gigitan tikus atau sarang
-                            serangga.</p>
-                    </div>
-                </div>
-
-                <div
-                    class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=800"
-                            alt="Area Belanja Modern"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="store" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Komersial</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Toko & Ritel</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Menjaga
-                            tampilan toko dan integritas produk pajangan agar tetap bersih dari hama demi kepercayaan
-                            pembeli.</p>
-                    </div>
-                </div>
-
-                <div class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    style="transition-delay: 100ms;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800"
-                            alt="Lobi Hotel Mewah"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="bed" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">Hospitality</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Hotel & Wisata</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Solusi
-                            pencegahan Kutu Busuk (Bed Bugs) dan hama terbang untuk memastikan kenyamanan tidur tamu
-                            Anda.</p>
-                    </div>
-                </div>
-
-                <div class="reveal group overflow-hidden bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl transition-all duration-500 hover:-translate-y-2"
-                    style="transition-delay: 200ms;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800"
-                            alt="Dapur Restoran Bersih"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 text-white flex items-center gap-2">
-                            <i data-lucide="utensils" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold uppercase tracking-widest">F&B</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-black mb-3 uppercase tracking-tighter">Makanan & Minuman</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-medium">Pengendalian
-                            lalat, kecoa, dan tikus di area dapur sesuai standar keamanan pangan internasional (HACCP).
-                        </p>
-                    </div>
-                </div>
-
+                    const container = document.currentScript.parentElement;
+                    
+                    pests.forEach(pest => {
+                        const card = `
+                            <a href="${pest.slug}" class="pest-card group bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 p-4 shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden relative">
+                                <div class="pest-image-container h-56 rounded-[1.8rem] overflow-hidden bg-slate-100 dark:bg-slate-800 relative mb-6">
+                                    <img src="https://source.unsplash.com/800x600/?${pest.name.replace(' ', ',')},pest" alt="${pest.name}" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </div>
+                                <div class="px-4 pb-4">
+                                    <span class="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 block">${pest.cat}</span>
+                                    <h3 class="text-2xl font-black italic tracking-tighter uppercase dark:text-white">${pest.name}</h3>
+                                    <div class="mt-6 flex items-center justify-between border-t border-slate-50 dark:border-slate-800 pt-4">
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase">Lihat Detail</span>
+                                        <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+                        container.innerHTML += card;
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -644,5 +510,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
