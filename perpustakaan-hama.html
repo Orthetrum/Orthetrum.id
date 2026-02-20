@@ -12,7 +12,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 
     <script>
         tailwind.config = {
@@ -23,35 +26,52 @@
                         primary: '#0ea5e9',
                         secondary: '#0284c7',
                         dark: '#0f172a',
+                    },
+                    /* Perbaikan: Menambahkan sedikit padding secara global pada heading 
+                       untuk mencegah font italic/tighter terpotong di pinggir */
+                    spacing: {
+                        'font-safe': '0.05em',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'wing-flap': 'flap 0.2s ease-in-out infinite',
+                        'drift': 'drift 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        flap: {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '1' },
+                        },
+                        drift: {
+                            '0%': { transform: 'translateX(-10%) translateY(0)' },
+                            '100%': { transform: 'translateX(110%) translateY(20px)' },
+                        }
                     }
                 }
             }
         }
     </script>
-    
     <style>
-        h1, h2, h3, .nav-link, span {
+        /* Perbaikan CSS Tambahan agar font tidak terpotong */
+        h1,
+        h2,
+        h3,
+        .nav-link,
+        span {
+            /* Memberikan sedikit ruang horizontal agar huruf italic tidak terpotong */
             padding-left: 0.02em;
             padding-right: 0.02em;
+            /* Memastikan overflow terlihat jika ada dekorasi font */
             overflow: visible !important;
         }
 
+        /* Menyesuaikan line-height agar bagian atas/bawah font tidak terpotong */
         .tracking-tighter {
             line-height: 1.1 !important;
-        }
-
-        /* HD Card Hover Effect */
-        .pest-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .pest-card:hover {
-            transform: translateY(-10px);
-        }
-        .pest-image-container img {
-            transition: transform 0.7s scale;
-        }
-        .pest-card:hover .pest-image-container img {
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -68,7 +88,7 @@
                 </div>
 
                 <div class="hidden md:flex space-x-10 items-center">
-                    <a href="index.html" class="nav-link text-primary">Beranda</a>
+                    <a href="index.html" class="nav-link ">Beranda</a>
 
                     <div class="relative group py-2">
                         <button class="nav-link flex items-center gap-1">Layanan <i data-lucide="chevron-down"
@@ -85,7 +105,7 @@
                     </div>
                     <a href="keunggulan.html" class="nav-link">Keunggulan</a>
                     <div class="relative group py-2">
-                        <button class="nav-link flex items-center gap-1">
+                        <button class="nav-link flex items-center gap-1 text-primary">
                             Perpustakaan Hama
                             <i data-lucide="chevron-down"
                                 class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>
@@ -263,57 +283,66 @@
     </div>
 
     <section class="pt-40 pb-20 px-6 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
-    
-    <div class="max-w-7xl mx-auto relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            
-            <div class="w-full lg:w-3/5 text-left">
-                <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] uppercase bg-primary/10 text-primary rounded-full border border-primary/20 animate__animated animate__fadeInLeft">
-                    Orthetrum Encyclopedia
-                </span>
-                <h1 class="text-6xl md:text-7xl xl:text-8xl font-black italic tracking-tighter uppercase mb-8 leading-[0.9] animate__animated animate__fadeInLeft">
-                    Pusat <br>
-                    <span class="text-primary">Edukasi</span> <br>
-                    Hama
-                </h1>
-                <p class="text-slate-500 dark:text-slate-400 max-w-xl text-lg md:text-xl font-medium leading-relaxed animate__animated animate__fadeInLeft animate__delay-1s">
-                    Temukan informasi lengkap mengenai profil, bahaya, dan cara penanganan berbagai spesies hama di sekitar Anda secara profesional dan mendalam.
-                </p>
-                
-                <div class="mt-10 flex items-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="flex -space-x-3">
-                        <div class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=100" alt="expert" >
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+                <div class="w-full lg:w-3/5 text-left">
+                    <span
+                        class="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] uppercase bg-primary/10 text-primary rounded-full border border-primary/20 animate__animated animate__fadeInLeft">
+                        Orthetrum Encyclopedia
+                    </span>
+                    <h1
+                        class="text-6xl md:text-7xl xl:text-8xl font-black italic tracking-tighter uppercase mb-8 leading-[0.9] animate__animated animate__fadeInLeft">
+                        Pusat <br>
+                        <span class="text-primary">Edukasi</span> <br>
+                        Hama
+                    </h1>
+                    <p
+                        class="text-slate-500 dark:text-slate-400 max-w-xl text-lg md:text-xl font-medium leading-relaxed animate__animated animate__fadeInLeft animate__delay-1s">
+                        Temukan informasi lengkap mengenai profil, bahaya, dan cara penanganan berbagai spesies hama di
+                        sekitar Anda secara profesional dan mendalam.
+                    </p>
+
+                    <div class="mt-10 flex items-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="flex -space-x-3">
+                            <div
+                                class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=100"
+                                    alt="expert">
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden flex items-center justify-center bg-primary text-white text-xs font-bold">
+                                19+
+                            </div>
                         </div>
-                        <div class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden flex items-center justify-center bg-primary text-white text-xs font-bold">
-                            19+
+                        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Spesies
+                            Teridentifikasi</span>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/5 relative animate__animated animate__fadeInRight">
+                    <div
+                        class="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-700">
+                        <img src="uploads/perpustakaan-hama.png" alt="Pest Control Research"
+                            class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent">
                         </div>
                     </div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Spesies Teridentifikasi</span>
-                </div>
-            </div>
 
-            <div class="w-full lg:w-2/5 relative animate__animated animate__fadeInRight">
-                <div class="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-700">
-                    <img src="uploads/perpustakaan-hama.png" 
-                         alt="Pest Control Research" 
-                         class="w-full h-[500px] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-3xl -z-10 animate-pulse"></div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/30 rounded-full -z-10"></div>
                 </div>
-                
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-3xl -z-10 animate-pulse"></div>
-                <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/30 rounded-full -z-10"></div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="pb-40 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                
+
                 <script>
                     const pests = [
                         { name: "Burung", slug: "burung.html", cat: "Aves" },
@@ -338,7 +367,7 @@
                     ];
 
                     const container = document.currentScript.parentElement;
-                    
+
                     pests.forEach(pest => {
                         const card = `
                             <a href="${pest.slug}" class="pest-card group bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 p-4 shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden relative">
@@ -510,4 +539,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
