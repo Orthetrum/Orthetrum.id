@@ -80,11 +80,16 @@
     <div id="dragonfly-garden" class="fixed inset-0 pointer-events-none z-[40] overflow-hidden"></div>
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 px-4 py-6">
         <div
-            class="max-w-7xl mx-auto bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800/50 rounded-3xl px-6 py-3 shadow-2xl">
+            class="max-w-7xl mx-auto bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800/50 rounded-3xl px-6 py-3 shadow-2xl shadow-slate-200/50 dark:shadow-none transition-all duration-500">
             <div class="flex justify-between items-center">
-                <div class="flex items-center gap-3 group cursor-pointer" onclick="window.location.href='index.html'">
-                    <span
-                        class="text-2xl font-black tracking-tighter text-slate-800 dark:text-white uppercase">Orthetrum</span>
+                <div class="flex items-center gap-3 group cursor-pointer" onclick="window.location.reload()">
+                    <div
+                        class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/30 group-hover:rotate-12 transition-transform duration-500">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-800 dark:text-white uppercase transition-all duration-500">
+                    Orthetrum <span class="text-primary italic">Pro</span> Indonesia
+                </span>
                 </div>
 
                 <div class="hidden md:flex space-x-10 items-center">
@@ -192,95 +197,73 @@
     </nav>
 
     <div id="mobile-menu"
-        class="fixed inset-0 z-[60] bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg flex flex-col p-8 md:hidden">
-        <div class="flex justify-between items-center mb-12">
-            <span class="text-xl font-black tracking-tighter uppercase">Orthetrum</span>
-            <button id="menu-close" class="p-3 rounded-2xl bg-slate-100/50 dark:bg-slate-900/50 backdrop-blur-md">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-        </div>
-        <div class="flex flex-col gap-6 text-xl font-bold italic">
-            <a href="index.html" class="mobile-nav-link text-primary">Beranda</a>
-            <div class="relative group py-2">
-                <button class="nav-link flex items-center gap-1">Layanan <i data-lucide="chevron-down"
-                        class="w-4 h-4"></i></button>
-                <div
-                    class="absolute left-0 mt-2 w-52 bg-white dark:bg-slate-900 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100 dark:border-slate-800 p-2">
-                    <a href="layanan-bisnis.html"
-                        class="block px-4 py-3 hover:bg-primary/10 hover:text-primary transition rounded-xl font-bold text-xs tracking-widest uppercase">Layanan
-                        Bisnis</a>
-                    <a href="layanan-residensial.html"
-                        class="block px-4 py-3 hover:bg-primary/10 hover:text-primary transition rounded-xl font-bold text-xs tracking-widest uppercase">Layanan
-                        Residensial</a>
-                </div>
-            </div>
-            <a href="keunggulan.html" class="mobile-nav-link">Keunggulan</a>
-            <details class="group w-full">
-                <summary class="list-none flex items-center justify-between cursor-pointer">
-                    <span class="text-2xl font-black italic uppercase ">Perpustakaan Hama</span>
-                    <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
-                </summary>
+    class="fixed inset-0 z-[60] bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg flex flex-col p-8 md:hidden">
+    
+    <div class="flex justify-between items-center mb-12">
+        <span class="text-xl font-black tracking-tighter uppercase">Orthetrum</span>
+        <button id="menu-close" class="p-3 rounded-2xl bg-slate-100/50 dark:bg-slate-900/50 backdrop-blur-md">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+    </div>
 
-                <div
-                    class="mt-4 border-l-4 border-primary/20 bg-slate-50/50 dark:bg-slate-900/50 rounded-2xl overflow-hidden">
-                    <div class="max-h-72 overflow-y-auto custom-scrollbar py-2">
-                        <div class="flex flex-col">
-                            <a href="burung.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Burung</a>
-                            <a href="gegat"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Gegat</a>
-                            <a href="hama-pengerat.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama
-                                Pengerat</a>
-                            <a href="hama-menyengat"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama
-                                Menyengat</a>
-                            <a href="kadal.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kadal</a>
-                            <a href="kaki-seribu.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kaki
-                                Seribu</a>
-                            <a href="kecoa.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kecoa</a>
-                            <a href="kelabang.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kelabang</a>
-                            <a href="kepik-berbau.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kepik
-                                Berbau</a>
-                            <a href="kucing.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kucing</a>
-                            <a href="kumbang.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kumbang</a>
-                            <a href="kutu-busuk.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kutu
-                                Busuk</a>
-                            <a href="laba-laba.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Laba-laba</a>
-                            <a href="lalat.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Lalat</a>
-                            <a href="nyamuk.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Nyamuk</a>
-                            <a href="semut.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Semut</a>
-                            <a href="rayap.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Rayap</a>
-                            <a href="tungau.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Tungau</a>
-                            <a href="ular.html"
-                                class="py-3 px-6 text-lg font-bold text-slate-500 hover:text-primary">Ular</a>
-                        </div>
+    <div class="flex flex-col gap-8">
+        <a href="index.html" class="text-2xl font-black italic uppercase ">Beranda</a>
+
+        <details class="group w-full">
+            <summary class="list-none flex items-center justify-between cursor-pointer">
+                <span class="text-2xl font-black italic uppercase text-primary">Layanan</span>
+                <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
+            </summary>
+            <div class="mt-4 border-l-4 border-primary/20 flex flex-col gap-4 pl-6">
+                <a href="layanan-bisnis.html" class="text-lg font-bold italic uppercase text-slate-500 hover:text-primary transition">Layanan Bisnis</a>
+                <a href="layanan-residensial.html" class="text-lg font-bold italic uppercase text-slate-500 hover:text-primary transition">Layanan Residensial</a>
+            </div>
+        </details>
+
+        <a href="keunggulan.html" class="text-2xl font-black italic uppercase text-slate-900 dark:text-white">Keunggulan</a>
+
+        <details class="group w-full">
+            <summary class="list-none flex items-center justify-between cursor-pointer">
+                <a href="perpustakaan-hama.html" class="text-2xl font-black italic uppercase">Perpustakaan Hama</a>
+                <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
+            </summary>
+
+            <div class="mt-4 border-l-4 border-primary/20 bg-slate-50/50 dark:bg-slate-900/50 rounded-2xl overflow-hidden">
+                <div class="max-h-72 overflow-y-auto custom-scrollbar py-2">
+                    <div class="flex flex-col">
+                        <a href="burung.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Burung</a>
+                        <a href="gegat" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Gegat</a>
+                        <a href="hama-pengerat.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama Pengerat</a>
+                        <a href="hama-menyengat" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama Menyengat</a>
+                        <a href="kadal.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kadal</a>
+                        <a href="kaki-seribu.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kaki Seribu</a>
+                        <a href="kecoa.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kecoa</a>
+                        <a href="kelabang.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kelabang</a>
+                        <a href="kepik-berbau.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kepik Berbau</a>
+                        <a href="kucing.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kucing</a>
+                        <a href="kumbang.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kumbang</a>
+                        <a href="kutu-busuk.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kutu Busuk</a>
+                        <a href="laba-laba.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Laba-laba</a>
+                        <a href="lalat.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Lalat</a>
+                        <a href="nyamuk.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Nyamuk</a>
+                        <a href="semut.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Semut</a>
+                        <a href="rayap.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Rayap</a>
+                        <a href="tungau.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Tungau</a>
+                        <a href="ular.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary">Ular</a>
                     </div>
                 </div>
-            </details>
-        </div>
-        <div class="mt-auto">
-            <a href="https://wa.me/6281294174256?text=Halo%20Orthetrum,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Anda."
-                target="_blank"
-                class="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center shadow-xl shadow-primary/20">
-                Konsultasi Sekarang
-            </a>
-        </div>
+            </div>
+        </details>
     </div>
+
+    <div class="mt-auto">
+        <a href="https://wa.me/6281294174256?text=Halo%20Orthetrum,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Anda."
+            target="_blank"
+            class="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center shadow-xl shadow-primary/20 italic uppercase tracking-widest">
+            Konsultasi Sekarang
+        </a>
+    </div>
+</div>
 
     <section class="pt-48 pb-20 px-6 relative">
         <div class="max-w-7xl mx-auto text-center reveal">
@@ -497,9 +480,9 @@
                             Ketenangan Pikiran <br><span class="text-primary italic">Tanpa Biaya Tambahan</span>
                         </h2>
                         <p class="text-slate-600 dark:text-slate-400 font-medium mb-8 leading-relaxed">
-                            Kami tidak hanya mengusir hama, kami memastikan mereka tidak kembali. Jika hama muncul
+                            Kami tidak hanya mengendalikan populasi hama, kami memastikan mereka tidak kembali. Jika hama muncul
                             kembali dalam masa garansi, teknisi kami akan datang melakukan penanganan ulang secara
-                            **gratis**.
+                            <b class="font-bold text-slate-900 dark:text-white">gratis</b>.
                         </p>
 
                         <div class="space-y-4">
