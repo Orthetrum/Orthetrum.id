@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Hama - Orthetrum</title>
+    <title>Kutu Busuk - Perpustakaan Hama Orthetrum Pro</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -27,57 +27,32 @@
                         secondary: '#0284c7',
                         dark: '#0f172a',
                     },
-                    /* Perbaikan: Menambahkan sedikit padding secara global pada heading 
-                       untuk mencegah font italic/tighter terpotong di pinggir */
-                    spacing: {
-                        'font-safe': '0.05em',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'wing-flap': 'flap 0.2s ease-in-out infinite',
-                        'drift': 'drift 20s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
-                        },
-                        flap: {
-                            '0%, 100%': { opacity: '0.3' },
-                            '50%': { opacity: '1' },
-                        },
-                        drift: {
-                            '0%': { transform: 'translateX(-10%) translateY(0)' },
-                            '100%': { transform: 'translateX(110%) translateY(20px)' },
-                        }
-                    }
                 }
             }
         }
     </script>
-    <style>
-        /* Perbaikan CSS Tambahan agar font tidak terpotong */
-        h1,
-        h2,
-        h3,
-        .nav-link,
-        span {
-            /* Memberikan sedikit ruang horizontal agar huruf italic tidak terpotong */
-            padding-left: 0.02em;
-            padding-right: 0.02em;
-            /* Memastikan overflow terlihat jika ada dekorasi font */
-            overflow: visible !important;
-        }
-
-        /* Menyesuaikan line-height agar bagian atas/bawah font tidak terpotong */
-        .tracking-tighter {
-            line-height: 1.1 !important;
-        }
-    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 dark:bg-[#020617] dark:text-slate-100 overflow-x-hidden relative">
-    <div id="dragonfly-garden" class="fixed inset-0 pointer-events-none z-[40] overflow-hidden"></div>
+    <div id="dragonfly-garden" class="fixed inset-0 pointer-events-none z-[40] overflow-hidden">
+    </div>
+
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden opacity-20 dark:opacity-10">
+        <div class="absolute top-1/4 -left-20 animate-drift">
+            <svg class="w-24 h-24 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
+                <circle cx="12" cy="12" r="1" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="fixed top-0 left-0 w-full h-full -z-20 overflow-hidden pointer-events-none">
+        <div
+            class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] animate-pulse">
+        </div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px]"></div>
+    </div>
+
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 px-4 py-6">
         <div
             class="max-w-7xl mx-auto bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800/50 rounded-3xl px-6 py-3 shadow-2xl shadow-slate-200/50 dark:shadow-none transition-all duration-500">
@@ -87,9 +62,10 @@
                         class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/30 group-hover:rotate-12 transition-transform duration-500">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-800 dark:text-white uppercase transition-all duration-500">
-                    Orthetrum <span class="text-primary italic">Pro</span> Indonesia
-                </span>
+                    <span
+                        class="text-xl font-extrabold tracking-tight text-slate-800 dark:text-white uppercase transition-all duration-500">
+                        Orthetrum <span class="text-primary italic">Pro</span> Indonesia
+                    </span>
                 </div>
 
                 <div class="hidden md:flex space-x-10 items-center">
@@ -111,7 +87,7 @@
                     <a href="keunggulan.html" class="nav-link">Keunggulan</a>
                     <div class="relative group py-2">
                         <button class="nav-link flex items-center gap-1 text-primary">
-                            Perpustakaan Hama
+                            <a href="perpustakaan-hama.html" class="mobile-nav-link">Perpustakaan Hama</a>
                             <i data-lucide="chevron-down"
                                 class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>
                         </button>
@@ -197,9 +173,9 @@
     </nav>
 
     <div id="mobile-menu"
-    class="fixed inset-0 z-[60] bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg flex flex-col p-8 md:hidden">
-    
-    <div class="flex justify-between items-center mb-12">
+        class="fixed inset-0 z-[60] bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg flex flex-col p-8 md:hidden">
+
+        <div class="flex justify-between items-center mb-12">
             <span
                 class="text-xl font-extrabold tracking-tight text-slate-800 dark:text-white uppercase transition-all duration-500">
                 Orthetrum <span class="text-primary italic">Pro</span> Indonesia</span>
@@ -208,183 +184,247 @@
             </button>
         </div>
 
-    <div class="flex flex-col gap-8">
-        <a href="index.html" class="text-2xl font-black italic uppercase ">Beranda</a>
+        <div class="flex flex-col gap-8">
+            <a href="index.html" class="text-2xl font-black italic uppercase ">Beranda</a>
 
-        <details class="group w-full">
-            <summary class="list-none flex items-center justify-between cursor-pointer">
-                <span class="text-2xl font-black italic uppercase ">Layanan</span>
-                <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
-            </summary>
-            <div class="mt-4 border-l-4 border-primary/20 flex flex-col gap-4 pl-6">
-                <a href="layanan-bisnis.html" class="text-lg font-bold italic uppercase text-slate-500 hover:text-primary transition">Layanan Bisnis</a>
-                <a href="layanan-residensial.html" class="text-lg font-bold italic uppercase text-slate-500 hover:text-primary transition">Layanan Residensial</a>
-            </div>
-        </details>
+            <details class="group w-full">
+                <summary class="list-none flex items-center justify-between cursor-pointer">
+                    <span class="text-2xl font-black italic uppercase">Layanan</span>
+                    <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
+                </summary>
+                <div class="mt-4 border-l-4 border-primary/20 flex flex-col gap-4 pl-6">
+                    <a href="layanan-bisnis.html"
+                        class="text-lg font-bold italic uppercase text-slate-500 hover:text-primary transition">Layanan
+                        Bisnis</a>
+                    <a href="layanan-residensial.html"
+                        class="text-lg font-bold italic uppercase text-slate-500 hover:text-primary transition">Layanan
+                        Residensial</a>
+                </div>
+            </details>
 
-        <a href="keunggulan.html" class="text-2xl font-black italic uppercase text-slate-900 dark:text-white">Keunggulan</a>
+            <a href="keunggulan.html"
+                class="text-2xl font-black italic uppercase text-slate-900 dark:text-white">Keunggulan</a>
 
-        <details class="group w-full">
-            <summary class="list-none flex items-center justify-between cursor-pointer">
-                <a href="perpustakaan-hama.html" class="text-2xl font-black italic uppercase text-primary">Perpustakaan Hama</a>
-                <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
-            </summary>
+            <details class="group w-full">
+                <summary class="list-none flex items-center justify-between cursor-pointer">
+                    <a href="perpustakaan-hama.html" class="text-2xl font-black italic uppercase text-primary">Perpustakaan Hama</a>
+                    <i data-lucide="plus" class="w-6 h-6 transition-transform duration-300 group-open:rotate-45"></i>
+                </summary>
 
-            <div class="mt-4 border-l-4 border-primary/20 bg-slate-50/50 dark:bg-slate-900/50 rounded-2xl overflow-hidden">
-                <div class="max-h-72 overflow-y-auto custom-scrollbar py-2">
-                    <div class="flex flex-col">
-                        <a href="burung.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Burung</a>
-                        <a href="gegat.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Gegat</a>
-                        <a href="hama-pengerat.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama Pengerat</a>
-                        <a href="hama-menyengat.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama Menyengat</a>
-                        <a href="kadal.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kadal</a>
-                        <a href="kaki-seribu.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kaki Seribu</a>
-                        <a href="kecoa.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kecoa</a>
-                        <a href="kelabang.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kelabang</a>
-                        <a href="kepik-berbau.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kepik Berbau</a>
-                        <a href="kucing.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kucing</a>
-                        <a href="kumbang.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kumbang</a>
-                        <a href="kutu-busuk.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kutu Busuk</a>
-                        <a href="laba-laba.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Laba-laba</a>
-                        <a href="lalat.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Lalat</a>
-                        <a href="nyamuk.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Nyamuk</a>
-                        <a href="semut.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Semut</a>
-                        <a href="rayap.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Rayap</a>
-                        <a href="tungau.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Tungau</a>
-                        <a href="ular.html" class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary">Ular</a>
+                <div
+                    class="mt-4 border-l-4 border-primary/20 bg-slate-50/50 dark:bg-slate-900/50 rounded-2xl overflow-hidden">
+                    <div class="max-h-72 overflow-y-auto custom-scrollbar py-2">
+                        <div class="flex flex-col">
+                            <a href="burung.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Burung</a>
+                            <a href="gegat.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Gegat</a>
+                            <a href="hama-pengerat.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama
+                                Pengerat</a>
+                            <a href="hama-menyengat.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Hama
+                                Menyengat</a>
+                            <a href="kadal.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kadal</a>
+                            <a href="kaki-seribu.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kaki
+                                Seribu</a>
+                            <a href="kecoa.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kecoa</a>
+                            <a href="kelabang.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kelabang</a>
+                            <a href="kepik-berbau.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0 text-primary">Kepik
+                                Berbau</a>
+                            <a href="kucing.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kucing</a>
+                            <a href="kumbang.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kumbang</a>
+                            <a href="kutu-busuk.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Kutu
+                                Busuk</a>
+                            <a href="laba-laba.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Laba-laba</a>
+                            <a href="lalat.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Lalat</a>
+                            <a href="nyamuk.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Nyamuk</a>
+                            <a href="semut.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Semut</a>
+                            <a href="rayap.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Rayap</a>
+                            <a href="tungau.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary border-b border-slate-100 dark:border-slate-800/50 last:border-0">Tungau</a>
+                            <a href="ular.html"
+                                class="py-3 px-6 text-lg font-bold italic uppercase text-slate-500 hover:text-primary">Ular</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </details>
+            </details>
+        </div>
+
+        <div class="mt-auto">
+            <a href="https://wa.me/6281294174256?text=Halo%20Orthetrum,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Anda."
+                target="_blank"
+                class="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center shadow-xl shadow-primary/20 italic uppercase tracking-widest">
+                Konsultasi Sekarang
+            </a>
+        </div>
     </div>
 
-    <div class="mt-auto">
-        <a href="https://wa.me/6281294174256?text=Halo%20Orthetrum,%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Anda."
-            target="_blank"
-            class="w-full py-4 bg-primary text-white rounded-2xl font-bold flex items-center justify-center shadow-xl shadow-primary/20 italic uppercase tracking-widest">
-            Konsultasi Sekarang
-        </a>
-    </div>
-</div>
-
-    <section class="pt-40 pb-20 px-6 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
-
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-
-                <div class="w-full lg:w-3/5 text-left">
-                    <span
-                        class="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] uppercase bg-primary/10 text-primary rounded-full border border-primary/20 animate__animated animate__fadeInLeft">
-                        Orthetrum Encyclopedia
-                    </span>
+    <main class="pt-32">
+        <section class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="relative rounded-[4rem] overflow-hidden bg-slate-900 h-[500px] group shadow-2xl">
+                <img src="uploads/kutu-busuk-head.jpg" alt="Kutu Busuk"
+                    class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-[2s]">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                <div class="absolute bottom-20 left-12 right-12">
+                    <div class="flex items-center gap-3 mb-6 animate__animated animate__fadeInUp">
+                        <span class="w-12 h-[2px] bg-primary"></span>
+                        <span class="text-primary font-black uppercase tracking-[0.4em] text-[10px]">Cimicidae
+                            Control</span>
+                    </div>
                     <h1
-                        class="text-6xl md:text-7xl xl:text-8xl font-black italic tracking-tighter uppercase mb-8 leading-[0.9] animate__animated animate__fadeInLeft">
-                        Pusat <br>
-                        <span class="text-primary">Edukasi</span> <br>
-                        Hama
+                        class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white mb-6 animate__animated animate__fadeInUp">
+                        Kutu <span class="text-primary">Busuk</span>
                     </h1>
-                    <p
-                        class="text-slate-500 dark:text-slate-400 max-w-xl text-lg md:text-xl font-medium leading-relaxed animate__animated animate__fadeInLeft animate__delay-1s">
-                        Temukan informasi lengkap mengenai profil, bahaya, dan cara penanganan berbagai spesies hama di
-                        sekitar Anda secara profesional dan mendalam.
+                    <p class="text-slate-400 max-w-2xl text-lg animate__animated animate__fadeInUp"
+                        style="animation-delay: 0.2s">
+                        Kutu busuk adalah parasit kecil yang menghisap darah manusia secara nokturnal. Mereka adalah
+                        ahli dalam bersembunyi dan dapat menyebabkan gangguan tidur serta iritasi kulit yang serius.
                     </p>
-
-                    <div class="mt-10 flex items-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
-                        <div class="flex -space-x-3">
-                            <div
-                                class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=100"
-                                    alt="expert">
-                            </div>
-                            <div
-                                class="w-12 h-12 rounded-full border-4 border-white dark:border-slate-900 bg-slate-200 overflow-hidden flex items-center justify-center bg-primary text-white text-xs font-bold">
-                                19+
-                            </div>
-                        </div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Spesies
-                            Teridentifikasi</span>
-                    </div>
                 </div>
-
-                <div class="w-full lg:w-2/5 relative animate__animated animate__fadeInRight">
-                    <div
-                        class="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-700">
-                        <img src="uploads/perpustakaan-hama.png" alt="Pest Control Research"
-                            class="w-full h-[500px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent">
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-3xl -z-10 animate-pulse"></div>
-                    <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-primary/30 rounded-full -z-10"></div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="pb-40 px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <h2 class="text-4xl font-black italic uppercase tracking-tighter mb-12 text-center dark:text-white">
+                Identifikasi
+                Hama</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-[3rem] p-8 border border-slate-100 dark:border-slate-800 shadow-2xl">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-20 h-20 rounded-2xl overflow-hidden bg-slate-100">
+                            <img src="uploads/kutu-busuk.jpg"
+                                alt="Cimex Lectularius" class="w-full h-full object-cover"
+                                onerror="this.src='https://ui-avatars.com/api/?name=KB&background=0ea5e9&color=fff'">
+                        </div>
+                        <h3 class="text-3xl font-black italic uppercase tracking-tighter dark:text-white">Cimex
+                            Lectularius</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs font-black uppercase text-primary tracking-widest block mb-2">Karakter
+                                Fisik</span>
+                            <p class="text-sm text-slate-500 leading-relaxed italic">Berukuran sekitar 4-5mm, berbentuk
+                                oval pipih seperti biji apel sebelum makan, dan membengkak kemerahan setelah menghisap
+                                darah.</p>
+                        </div>
+                        <div>
+                            <span
+                                class="text-xs font-black uppercase text-primary tracking-widest block mb-2">Habitat</span>
+                            <ul class="text-sm text-slate-500 space-y-1">
+                                <li>• Area Tidur: Lipatan kasur, kerangka tempat tidur, dan celah-celah headboard.</li>
+                                <li>• Tempat Sembunyi: Belakang wallpaper, stop kontak, dan celah furnitur kayu.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-            <script>
-                const pests = [
-                    /* CARA UPLOAD FOTO:
-                       Ganti tulisan "foto-burung.jpg" di bawah ini dengan nama file foto Anda.
-                       Pastikan file foto berada di folder yang sama dengan file HTML ini.
-                    */
-                    { name: "Burung", slug: "burung.html", cat: "Aves", image: "uploads/burung.jpg" },
-                    { name: "Gegat", slug: "gegat.html", cat: "Lepismatidae", image: "uploads/gegat.jpg" },
-                    { name: "Hama Pengerat", slug: "hama-pengerat.html", cat: "Rodentia", image: "uploads/tikus-rumah.jpg" },
-                    { name: "Hama Menyengat", slug: "hama-menyengat.html", cat: "Hymenoptera", image: "uploads/tawon.jpg" },
-                    { name: "Kadal", slug: "kadal.html", cat: "Lacertilia", image: "uploads/kadal.jpg" },
-                    { name: "Kaki Seribu", slug: "kaki-seribu.html", cat: "Diplopoda", image: "uploads/kaki-seribu-afrika.jpg" },
-                    { name: "Kecoa", slug: "kecoa.html", cat: "Blattodea", image: "uploads/kecoa-bergaris-cokelat.jpg" },
-                    { name: "Kelabang", slug: "kelabang.html", cat: "Chilopoda", image: "uploads/kelabang-hutan.jpg" },
-                    { name: "Kepik Berbau", slug: "kepik-berbau.html", cat: "Pentatomidae", image: "uploads/kepik-berbintik.jpg" },
-                    { name: "Kucing", slug: "kucing.html", cat: "Felidae", image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1200" },
-                    { name: "Kumbang", slug: "kumbang.html", cat: "Coleoptera", image: "uploads/kumbang-tepung-bingung.jpg" },
-                    { name: "Kutu Busuk", slug: "kutu-busuk.html", cat: "Cimicidae", image: "uploads/kutu-busuk.jpg" },
-                    { name: "Laba-laba", slug: "laba-laba.html", cat: "Araneae", image: "uploads/laba-laba-harvestman.jpg" },
-                    { name: "Lalat", slug: "lalat.html", cat: "Diptera", image: "uploads/lalat-bluebottle.jpg" },
-                    { name: "Nyamuk", slug: "nyamuk.html", cat: "Culicidae", image: "nyamuk.jpg" },
-                    { name: "Semut", slug: "semut.html", cat: "Formicidae", image: "semut.jpg" },
-                    { name: "Rayap", slug: "rayap.html", cat: "Isoptera", image: "rayap.jpg" },
-                    { name: "Tungau", slug: "tungau.html", cat: "Acarina", image: "tungau.jpg" },
-                    { name: "Ular", slug: "ular.html", cat: "Serpentes", image: "ular.jpg" }
-                ];
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-[3rem] p-8 border border-slate-100 dark:border-slate-800 shadow-2xl">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-20 h-20 rounded-2xl overflow-hidden bg-slate-100">
+                            <img src="uploads/siklus-hidup.jpg"
+                                alt="Telur Kutu Busuk" class="w-full h-full object-cover"
+                                onerror="this.src='https://ui-avatars.com/api/?name=Eggs&background=0ea5e9&color=fff'">
+                        </div>
+                        <h3 class="text-3xl font-black italic uppercase tracking-tighter dark:text-white">Siklus
+                            Hidup</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <span
+                                class="text-xs font-black uppercase text-primary tracking-widest block mb-2">Reproduksi</span>
+                            <p class="text-sm text-slate-500 leading-relaxed italic">Kutu busuk betina dapat bertelur
+                                hingga 5 telur per hari. Telur berwarna putih mutiara dan sangat sulit dideteksi tanpa
+                                alat pembesar.</p>
+                        </div>
+                        <div>
+                            <span class="text-xs font-black uppercase text-primary tracking-widest block mb-2">Daya
+                                Tahan</span>
+                            <ul class="text-sm text-slate-500 space-y-1">
+                                <li>• Kelangsungan Hidup: Dapat bertahan hidup berbulan-bulan tanpa makanan di suhu
+                                    ruangan normal.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                const container = document.currentScript.parentElement;
+        <section class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-black italic uppercase tracking-tighter dark:text-white">Gejala & Deteksi
+                    </h2>
+                    <div class="space-y-4">
+                        <div
+                            class="p-6 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-xl">
+                            <h3 class="font-black text-primary uppercase mb-2">Tanda Gigitan</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed dark:text-slate-400">Biasanya muncul dalam
+                                pola garis lurus atau berkelompok pada area kulit yang terpapar saat tidur seperti
+                                lengan dan bahu.</p>
+                        </div>
+                        <div
+                            class="p-6 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-xl">
+                            <h3 class="font-black text-primary uppercase mb-2">Indikator Visual</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed dark:text-slate-400">Adanya bintik hitam
+                                kecil (kotoran), bercak darah pada sprei, atau bau apek yang manis namun tidak
+                                menyenangkan.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-[3rem] overflow-hidden shadow-2xl aspect-square">
+                    <img src="uploads/gejala-kutu-busuk.jpg"
+                        alt="Bed Bug Detection" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
 
-                pests.forEach(pest => {
-                    const card = `
-                        <a href="${pest.slug}" class="pest-card group bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 p-4 shadow-xl shadow-slate-200/50 dark:shadow-none overflow-hidden relative block">
-                            <div class="pest-image-container h-56 rounded-[1.8rem] overflow-hidden bg-slate-200 dark:bg-slate-800 relative mb-6">
-                                <img src="${pest.image}" 
-                                     alt="${pest.name}" 
-                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                     onerror="this.parentElement.innerHTML += '<div class=\'absolute inset-0 flex items-center justify-center text-slate-400 text-xs font-bold uppercase tracking-widest\'>Foto Belum Tersedia</div>'; this.style.display='none';">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </div>
-                            <div class="px-4 pb-4">
-                                <span class="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 block">${pest.cat}</span>
-                                <h3 class="text-2xl font-black italic tracking-tighter uppercase dark:text-white">${pest.name}</h3>
-                                <div class="mt-6 flex items-center justify-between border-t border-slate-50 dark:border-slate-800 pt-4">
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase">Lihat Detail</span>
-                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    `;
-                    container.innerHTML += card;
-                });
-            </script>
-        </div>
-    </div>
-</section>
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="bg-slate-900 dark:bg-slate-800/50 rounded-[4rem] p-12 md:p-20 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] -mr-32 -mt-32"></div>
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-black italic uppercase tracking-tighter text-white mb-12">
+                        Penanganan Profesional</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-slate-400">
+                        <div class="space-y-4">
+                            <h4 class="text-white font-black uppercase text-lg italic tracking-wider">Investigasi
+                                Menyeluruh</h4>
+                            <p class="text-sm leading-relaxed">Tim ahli kami melakukan inspeksi mendalam pada
+                                titik-titik krusial menggunakan sensor termal untuk menemukan koloni yang tersembunyi.
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-white font-black uppercase text-lg italic tracking-wider">Steam Treatment
+                            </h4>
+                            <p class="text-sm leading-relaxed">Penggunaan uap panas tinggi yang efektif membasmi kutu
+                                busuk di semua fase hidup, termasuk telur, tanpa merusak material furnitur.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-white font-black uppercase text-lg italic tracking-wider">Perlindungan
+                                Residu</h4>
+                            <p class="text-sm leading-relaxed">Aplikasi bahan khusus dengan efek residu panjang untuk
+                                memastikan area tetap steril dari infestasi kutu busuk di masa mendatang.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-slate-900 text-white pt-32 pb-12 relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent">
